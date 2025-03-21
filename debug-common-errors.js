@@ -27,6 +27,7 @@ Think about which debugging methods you found most useful and how you might appl
 console.log("Welcome to the bootcamp
 
 // What’s Wrong?
+  //Missing closed paranthesis ) and ;
 
 
 // Program B
@@ -40,6 +41,7 @@ for (let i = 0; i < numbers.length; i++) {
 }
 
 // What’s Wrong?
+// the variable number has string declared in the list
 
 
 
@@ -51,7 +53,7 @@ function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
-      return true;  // Supposed to indicate num is NOT prime
+      return true;  // Supposed to indicate num is NOT prime //
     }
   }
   return false; // Supposed to indicate num IS prime
@@ -60,3 +62,20 @@ function isPrime(num) {
 console.log(isPrime(7)); // Expected true but gets false
 
 // What’s Wrong?
+//Incorrect return value and Incorrect Return at the End 
+
+function isPrime(num) {
+  if (num < 2) return false; // <2 are not prime
+
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false; // Not a prime number
+    }
+  }
+
+  return true; // Prime number
+}
+
+console.log(isPrime(7)); // Expected true
+console.log(isPrime(4)); // Expected false
+console.log(isPrime(13)); // Expected true
